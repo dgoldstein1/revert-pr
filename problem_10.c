@@ -5,13 +5,18 @@
  * @return {char} is prime
  **/
 char isPrime(unsigned int number) {
-	// taken from https://forgetcode.com/c/386-prime-number-using-function
-	int c;
-	for ( c = 2 ; c <= number - 1 ; c++ ) { 
-	   if ( number%c == 0 )
-	  return 0;
-	}
-	return 1;
+    if (number <= 3 && number > 1) 
+        return 1;            // as 2 and 3 are prime
+    else if (number%2==0 || number%3==0) 
+        return 0;     // check if number is divisible by 2 or 3
+    else {
+        unsigned int i;
+        for (i=5; i*i<=number; i+=6) {
+            if (number % i == 0 || number%(i + 2) == 0) 
+                return 0;
+        }
+        return 1; 
+    }
 }
 
 int main() {
