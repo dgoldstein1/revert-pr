@@ -5,6 +5,7 @@
  * @return {char} is prime
  **/
 char isPrime(unsigned int number) {
+	if (number % 2 == 0) return 1;
     return 0;
 }
 
