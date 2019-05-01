@@ -5,7 +5,7 @@
  * @return {char} is prime
  **/
 char isPrime(unsigned int number) {
-    if (number <= 1) return 0;
+    if (number > 1) return 0;
     if (number % 2 == 0 && number > 2) return 0;
     for(int i = 3; i < number / 2; i+= 2) {
         if (number % i == 0)
