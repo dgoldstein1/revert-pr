@@ -5,8 +5,13 @@
  * @return {char} is prime
  **/
 char isPrime(unsigned int number) {
-	if (number % 2 == 0) return 1;
-    return 0;
+	// taken from https://forgetcode.com/c/386-prime-number-using-function
+	int c;
+	for ( c = 2 ; c <= number - 1 ; c++ ) { 
+	   if ( number%c == 0 )
+	  return 0;
+	}
+	return 1;
 }
 
 int main() {
